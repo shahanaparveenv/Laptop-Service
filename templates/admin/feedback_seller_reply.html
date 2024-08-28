@@ -1,0 +1,16 @@
+{% extends 'admin/adminbase.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+
+		      	<h3 class="mb-4 text-center">Feedback Response</h3>
+		      	<form  method='post'>
+					{% csrf_token %}
+		      		{{data|crispy}}
+	           <div class="form-group">
+	            	<button type='submit' class="form-control btn btn-primary submit px-3">Update</button>
+	            </div>
+
+	          </form>
+
+{% endblock %}

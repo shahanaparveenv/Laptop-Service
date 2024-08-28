@@ -1,0 +1,34 @@
+{% extends 'seller/sellerbase.html' %}
+{% block content %}
+<h5>Feedbacks</h5>
+<br>
+<table class="table table-dark table-striped ">
+  <thead>
+    <tr>
+      <th scope="col">Sl no.</th>
+      <th scope="col">Feedback</th>
+      <th scope="col">Date</th>
+      <th scope="col">Reply</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in data %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{i.feedback}}</td>
+      <td>{{i.date}}</td>
+       <td>{{i.reply}}</td>
+
+    </tr>
+   {% endfor %}
+     </tbody>
+
+</table>
+{% endblock %}
+
+
+
+
+

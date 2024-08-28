@@ -1,0 +1,42 @@
+{% extends 'admin/adminbase.html' %}
+{% block content %}
+<h5>Seller Feedbacks</h5>
+<br>
+<table class="table table-dark table-striped ">
+  <thead>
+    <tr>
+      <th scope="col">Sl no.</th>
+      <th scope="col">Feedback</th>
+      <th scope="col">Date</th>
+      <th scope="col">Reply</th>
+      <th scope="col">Update</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in data %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{i.feedback}}</td>
+      <td>{{i.date}}</td>
+       <td>{{i.reply}}</td>
+      <td><a href="{% url 'sellerupdate' i.id %}" class="btn btn-info">Update</a></td>
+
+<!--      <td>-->
+<!--        <form action="{% url 'delete' i.id %}" method="POST" >-->
+<!--          {% csrf_token %}-->
+<!--          <button type = "submit" class="btn btn-warning">Delete</button>-->
+<!--        </form>-->
+<!--      </td>-->
+    </tr>
+   {% endfor %}
+     </tbody>
+
+</table>
+{% endblock %}
+
+
+
+
+

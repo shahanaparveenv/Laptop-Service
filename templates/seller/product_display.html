@@ -1,0 +1,28 @@
+{% extends 'seller/sellerbase.html' %}
+{% block content %}
+{% for message in messages %}
+ <div class="alert alert-primary" role="alert">
+{{message}}
+ </div>
+{% endfor %}
+<div class="container mt-5">
+  <div class="row">
+    {% for i in data %}
+      <div class="col-md-4 mb-4">
+        <div class="card" style="width: 18rem;">
+          <img src="{{i.document.url}}" class="card-img-top" alt="..."  style="width:16rem; height:12rem; ">
+          <div class="card-body">
+            <h5 class="card-title">{{i.name}}</h5>
+            <p class="card-text">{{i.details}}</p>
+            <p class="card-text">Rs.{{i.price}}</p>
+            <p class="card-text">Count: {{i.count}}</p>
+            <a href="{% url 'productdelete' i.id %}" class="btn btn-primary">Delete</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+{% endblock %}
